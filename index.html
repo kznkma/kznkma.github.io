@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <link id="coquette-fonts" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link id="dark-theme-fonts" href="https://fonts.googleapis.com/css2?family=Bentham&family=Palanquin+Dark:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Ren's Portfolio</title>
+</head>
+<body class="coquette-mode">
+    <nav>
+        <div class="nav-container coquette-mode">
+            <div id="logo" class="logo coquette-mode" data-aos="zoom-in" data-aos-duration="1500">
+                <span>Ren</span>
+                <span>Reverie</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="services.html">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="ratings.html">Ratings</a></div>
+                <button id="theme-switcher">
+                    <img src="coquette.png" alt="Switch to Dark Theme">
+                </button>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Service</a>
+                <a href="">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="background-container"></div>
+        <div class="main-container">
+            <div class="content">
+                <h1 id="ren-text" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
+                    Hey, I'm <span class="highlight-ren">Ren</span>
+                </h1>
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" class="typewriter">I'm a <span class="typewriter-text"></span><label for="">|</label></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">A 19-year-old digital illustrator currently based in the Philippines. I am an IT student. Explore my artistic services and let's create something amazing together!</p>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@kznkma" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/kznkma/" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61561673905668" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/kznkma" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1800">
+                    <button id="hire-me-btn">Hire Me</button>
+                    <div id="popup-box" style="display: none;">
+                        <form id="contact-form">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" placeholder="Your email address">
+                            <br>
+                            <label for="message">Write a message...</label>
+                            <textarea id="message" name="message" placeholder="Write a message..."></textarea>
+                            <br>
+                            <label for="attachment">Attach a file:</label>
+                            <input type="file" id="attachment" name="attachment">
+                            <br>
+                            <div class="form-buttons">
+                                <button id="send-btn" type="submit">Send</button>
+                                <button id="close-btn" type="button">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="image" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="main.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0,});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

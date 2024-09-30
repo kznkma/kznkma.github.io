@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="gallery.css">
+    <link id="coquette-fonts" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link id="dark-theme-fonts" href="https://fonts.googleapis.com/css2?family=Bentham&family=Palanquin+Dark:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Gallery</title>
+    <title>Gallery</title>
+</head>
+<body id="body" class="coquette-mode">
+    <nav>
+        <div class="nav-container coquette-mode">
+            <div id="logo" class="logo coquette-mode" data-aos="zoom-in" data-aos-duration="1500">
+                <span>Ren</span>
+                <span>Reverie</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="services.html">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="ratings.html">Ratings</a></div>
+                <button id="theme-switcher">
+                    <img src="coquette.png" alt="Switch to Dark Theme">
+                </button>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Service</a>
+                <a href="">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="background-container"></div>
+        <div class="main-container">
+            <div class="content">
+                <h1 id="gallery-header" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700" style="text-align: center;">
+                    Artwork Gallery
+                </h1>
+                <h2 id="favorite-artworks" class="favorite-artworks" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" style="text-align: center;">
+                    Favorite Artworks
+                </h2>
+                <div class="image-row favorite-artworks-row">
+                    <div class="image-container favorite-artworks-image">
+                        <img src="main.png" alt="Artwork 1" onclick="openLightbox(this)">
+                    </div>
+                    <div class="image-container favorite-artworks-image">
+                        <img src="main.png" alt="Artwork 2" onclick="openLightbox(this)">
+                    </div>
+                    <div class="image-container favorite-artworks-image">
+                        <img src="main.png" alt="Artwork 3" onclick="openLightbox(this)">
+                    </div>
+                </div>
+                </div>
+                <div class="style-section">
+                    <h2 class="style-header">Style 1: Simple Illustration</h2>
+                    <div class="arrow arrow-left" onclick="scrollLeft('style1')">&#9664;</div>
+                    <div class="style-images" id="style1">
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 1 Artwork 1" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 1 Artwork 2" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 1 Artwork 3" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 1 Artwork 4" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 1 Artwork 5" onclick="openLightbox(this)">
+                        </div>
+                    </div>
+                    <div class="arrow arrow-right" onclick="scrollRight('style1')">&#9654;</div>
+                    <p class="style-description">Description for Style 1</p>
+                </div>
+                <div class="style-section">
+                    <h2 class="style-header">Style 2: Rendered Illustration</h2>
+                    <div class="arrow arrow-left" onclick="scrollLeft('style2')">&#9664;</div>
+                    <div class="style-images" id="style2">
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 2 Artwork 1" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 2 Artwork 2" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 2 Artwork 3" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 2 Artwork 4" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 2 Artwork 5" onclick="openLightbox(this)">
+                        </div>
+                    </div>
+                    <div class="arrow arrow-right" onclick="scrollRight('style2')">&#9654;</div>
+                    <p class="style-description">Description for Style 1</p>
+                </div>
+                <div class="style-section">
+                    <h2 class="style-header">Style 3: Backgrounds & Scenery</h2>
+                    <div class="arrow arrow-left" onclick="scrollLeft('style3')">&#9664;</div>
+                    <div class="style-images" id="style3">
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 3 Artwork 1" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 3 Artwork 2" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 3 Artwork 3" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 3 Artwork 4" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 3 Artwork 5" onclick="openLightbox(this)">
+                        </div>
+                    </div>
+                    <div class="arrow arrow-right" onclick="scrollRight('style3')">&#9654;</div>
+                    <p class="style-description">Description for Style 1</p>
+                </div>
+                <div class="style-section">
+                    <h2 class="style-header">Style 4: Graphic Design</h2>
+                    <div class="arrow arrow-left" onclick="scrollLeft('style4')">&#9664;</div>
+                    <div class="style-images" id="style4">
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 4 Artwork 1" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 4 Artwork 2" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 4 Artwork 3" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 4 Artwork 4" onclick="openLightbox(this)">
+                        </div>
+                        <div class="image-container">
+                            <img src="main.png" alt="Style 4 Artwork 5" onclick="openLightbox(this)">
+                        </div>
+                    </div>
+                    <div class="arrow arrow-right" onclick="scrollRight('style4')">&#9654;</div>
+                    <p class="style-description">Description for Style 1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <script>
+        function scrollLeft(id) {
+            document.getElementById(id).scrollBy({ left: -200, behavior: 'smooth' });
+        }
+
+        function scrollRight(id) {
+            document.getElementById(id).scrollBy({ left: 200, behavior: 'smooth' });
+        }
+
+        function openLightbox(img) {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('show');
+        }
+
+        function closeLightbox() {
+            var lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('show');
+        }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0,});
+    </script>
+    <script src="gallery.js"></script>
+    <p class="centered-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</body>
+</html>

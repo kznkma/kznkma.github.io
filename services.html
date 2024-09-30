@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="services.css">
+    <link id="coquette-fonts" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link id="dark-theme-fonts" href="https://fonts.googleapis.com/css2?family=Bentham&family=Palanquin+Dark:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body class="coquette-mode">
+    <nav>
+        <div class="nav-container coquette-mode">
+            <div id="logo" class="logo coquette-mode" data-aos="zoom-in" data-aos-duration="1500">
+                <span>Ren</span>
+                <span>Reverie</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="services.html">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="ratings.html">Ratings</a></div>
+                <button id="theme-switcher">
+                    <img src="coquette.png" alt="Switch to Dark Theme">
+                </button>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">Service</a>
+                <a href="">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="services-container">
+        <div class="services-header">
+            <h1 class="typewriter-text glow-text"></h1>
+        </div>
+        <div class="status-container">
+            <h2 class="text-shadow" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="700">STATUS: OPEN</h2>
+            <p class="text-shadow" data-aos="slide-down" data-aos-duration="1500" data-aos-delay="700">Available Slots: 5</p>
+        </div>
+        <div class="services-content">
+            <div class="service-item">
+                <h2 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="700">Writing</h2>
+                <p data-aos="slide-down" data-aos-duration="1500" data-aos-delay="700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            </div>
+            <div class="service-item">
+                <h2 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="700">Graphic Design</h2>
+                <p data-aos="slide-down" data-aos-duration="1500" data-aos-delay="700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            </div>
+            <div class="service-item">
+                <h2 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="700">Art Commissions</h2>
+                <p data-aos="slide-down" data-aos-duration="1500" data-aos-delay="700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            </div>
+            <div class="services-table">
+                <div class="table-container">
+                    <table data-aos=data-aos="fade-in" data-aos-duration="1500" data-aos-delay="700">
+                        <tbody>
+                            <tr data-aos="fade-in" data-aos-duration="1500" data-aos-delay="700">
+                                <td>Lorem ipsum dolor sit amet.</td>
+                                <td>Sed sit amet nulla auctor.</td>
+                            </tr>
+                            <tr data-aos="fade-in" data-aos-duration="1500" data-aos-delay="700">
+                                <td>Vestibulum magna sed.</td>
+                                <td>Convallis ex cum sociis.</td>
+                            </tr>
+                            <tr data-aos="fade-in" data-aos-duration="1500" data-aos-delay="700">
+                                <td>Natoque penatibus et magnis dis.</td>
+                                <td>Parturient montes nascetur ridiculus mus.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 0, // Trigger animations as soon as the element is in the viewport
+            duration: 1500, // Duration of the animations
+            easing: 'ease-in-out', // Easing function for the animations
+            once: true, // Whether animation should happen only once - while scrolling down
+            startEvent: 'DOMContentLoaded' // Trigger animations on DOMContentLoaded
+        });
+    </script>
+    <script src="services.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

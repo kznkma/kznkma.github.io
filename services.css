@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add box-shadow transition */
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+  position: relative;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+nav {
+  width: 100%;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container .links {
+  display: flex;
+}
+
+.nav-container .links a {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 550;
+  transition: 0.3s linear;
+}
+
+.nav-container .links a:hover {
+  color: rgb(211, 3, 3);
+  border-bottom: 2px solid rgb(211, 3, 3);
+}
+
+.logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.logo span {
+  color: rgb(211, 3, 3);
+  text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+.hamburg,
+.cancel {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: white;
+  display: none;
+  font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.dropdown {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  transform: translateY(-500px);
+  width: 100%;
+  height: auto;
+  backdrop-filter: blur(4px) brightness(40%);
+  box-shadow: 0 0 20px black;
+  transition: 0.2s linear;
+}
+
+.dropdown .links a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  padding: 15px 0;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s linear;
+}
+
+.align-items: center;
+  transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+  background-color: rgb(211, 3, 3);
+}
+
+section {
+  width: 100%;
+  height: 90vh;
+}
+
+/* Coquette Theme */
+body.coquette-mode {
+  font-family: 'Just Me Again Down Here', cursive;
+  background-image: url('flower aura.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  transition: background-image 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+}
+
+body.coquette-mode {
+  background-color: #f0e6f6;
+  color: #333;
+}
+
+body.coquette-mode::before {
+  background-image: url('flower aura.jpg');
+  opacity: 1;
+}
+
+.coquette-mode .logo span {
+  font-family: 'Pacifico', cursive;
+  color: rgb(231, 68, 95);
+  text-shadow: rgb(146, 33, 52);
+  margin-left: 30px;
+}
+
+.coquette-mode .logo span:nth-child(2) {
+  font-family: 'Pacifico', cursive;
+  color: rgb(231, 68, 95);
+  text-shadow: rgb(146, 33, 52);
+  margin-left: 10px; /* Adjust this value to move "Ren" to the left */
+}
+
+body.coquette-mode .nav-container {
+  background-color: transparent;
+  color: #333;
+}
+
+.logo.coquette-mode {
+  color: #333;
+  transition: color 0.5s ease-in-out; /* Smooth transition */
+}
+
+.nav-container.coquette-mode .links a {
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  font-size: 25px;
+  color: #be5353; /* Coquette theme link color */
+  transition: color 0.5s ease-in-out;
+}
+
+.nav-container.coquette-mode .links a:hover {
+  color: #782222;
+  border-bottom: 2px solid rgb(114, 39, 39);
+}
+
+body.coquette-mode .content p {
+  font-family: 'Pacifico';
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.coquette-mode .logo img {
+  content: url('coquette.png'); /* Path to the coquette logo image */
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.coquette-mode .typewriter-text {
+  font-family: 'Pacifico', cursive;
+}
+
+.coquette-mode .status-container h2,
+.coquette-mode .status-container p {
+    font-family: 'Just Me Again Down Here', cursive;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  font-family: 'Bentham', serif;
+  background-image: url('red aura.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ff0000;
+  transition: background-image 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #f0e6f6;
+}
+
+body.dark-mode::before {
+  background-image: url('red aura.jpg');
+  opacity: 1;
+}
+
+.dark-mode .logo span {
+  font-family: 'Palanquin Dark', cursive;
+  color: #ff0000;
+  transition: color 0.5s ease-in-out;
+  margin-left: 20px;
+}
+
+.dark-mode .logo span:nth-child(2) {
+  font-family: 'Palanquin Dark', cursive;
+  color: #ff0000;
+  text-shadow: rgb(146, 33, 52);
+  margin-left: 10px; /* Adjust this value to move "Ren" to the left */
+}
+
+body.dark-mode .nav-container {
+  background-color: transparent; /* Set background to transparent */
+  color: #fff; /* Ensure text color is set */
+}
+
+.logo.dark-mode {
+  color: #ff0000;
+  transition: color 0.5s ease-in-out; /* Smooth transition */
+}
+
+.dark-mode .nav-container .links a {
+  font-family: 'Palanquin Dark', cursive;
+  color: #b02a2a;
+  transition: color 0.5s ease-in-out; /* Smooth transition */
+}
+
+.dark-mode .nav-container .links a:hover {
+  color: #f95151;
+  border-bottom: 2px solid rgb(150, 16, 16);
+}
+
+.dark-mode .logo img {
+  content: url('dark.png'); /* Path to the dark logo image */
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.dark-mode .typewriter-text {
+  font-family: 'Palanquin Dark', sans-serif;
+  text-shadow: 0 0 10px rgb(211, 3, 3);
+  color:rgb(235, 51, 51)
+}
+
+.dark-mode .status-container h2,
+.dark-mode .status-container p {
+    font-family: 'Bentham', serif;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    color:rgb(235, 51, 51)
+}
+
+body.dark-theme {
+  background-color: #333;
+  color: #f0e6f6;
+}
+
+body.dark-mode .services-table td,
+body.dark-mode .services-table th {
+  text-shadow: 0 0 10px rgb(211, 3, 3);
+  color:rgb(235, 51, 51)
+  transition: none;
+}
+
+.services-header, .status-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust as needed */
+}
+
+.typewriter-text {
+  font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  border-right: 0.15em solid rgb(254, 254, 254); /* Cursor color */
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+.typewriter span {
+  color: rgb(211, 3, 3);
+  text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+/* Theme Switcher Button */
+#theme-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  margin-left: 20px;
+  transition: 0.3s linear;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+#theme-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  margin-left: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#theme-switcher img {
+  width: 50px;
+  height: 50px;
+  transition: 0.3s ease-in-out; /* Smooth transition */
+}
+
+#theme-switcher.rotating-coquette img {
+  animation: rotate-coquette 1s forwards; /* Apply the rotation animation */
+}
+
+#theme-switcher.rotating-dark img {
+  animation: rotate-dark 1s forwards; /* Apply the rotation animation */
+}
+
+#theme-switcher:hover {
+  transform: translate(-6px, -5px); /* Move the button up slightly */
+}
+
+#theme-switcher.rotating img {
+  animation: rotate 0.5s ease-in-out; /* Apply the rotation animation */
+}
+
+#typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+}
+
+#typewriter-text {
+  font-size: 2em; /* Adjust as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes rotate-coquette {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-dark {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(254, 254, 254); }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below the final position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the final position */
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.service-item {
+  margin-bottom: 20px;
+}
+
+.service-item h2 {
+  margin-top: 0;
+}
+
+.services-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.services-content {
+  overflow: visible; /* Ensure content is not hidden */
+  position: relative; /* Ensure proper positioning */
+}
+
+.services-table {
+  overflow: hidden; /* Ensure no scrollbars */
+  width: 100%; /* Make sure the table fits within its container */
+  margin-top: 20px; /* Add some margin for spacing */
+}
+
+.table-container {
+  max-height: 400px; /* Set a fixed height for the table container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.services-table table {
+  width: 100%; /* Ensure the table takes the full width of its container */
+  border-collapse: collapse; /* Optional: for better table styling */
+}
+
+.services-table td, .services-table th {
+  padding: 8px; /* Adjust padding as needed */
+  text-align: left; /* Adjust text alignment as needed */
+  border: 1px solid #ddd; /* Optional: for better table styling */
+  background-color: transparent; /* Ensure background color is transparent */
+  transition: none;
+}
+
+.services-table th {
+  background-color: rgba(242, 242, 242, 0.8); /* Light grey background for table headers with some transparency */
+  font-weight: bold; /* Bold text for headers */
+}
+
+.services-table tr:hover {
+  background-color: rgba(242, 242, 242, 0.5); /* Light grey background with some transparency on hover */
+}
+
+body.coquette-theme {
+  background-color: #f0e6f6;
+  color: #333;
+}
+
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.typewriter-text {
+  font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  border-right: 0.15em solid rgb(254, 254, 254); /* Cursor color */
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+p {
+    font-size: 16px;
+}
+
+body.coquette-theme .logo img {
+    font-family: 'Allura', cursive;
+}
+
+body.dark-theme .logo img {
+    font-family: 'Permanent Marker', cursive;
+}
+
+body.coquette-theme .typewriter-text {
+    font-family: 'Pacifico', cursive;
+}
+
+body.dark-theme .typewriter-text {
+    font-family: 'Palanquin Dark', sans-serif;
+}
+
+body.coquette-theme p {
+    font-family: 'Just Me Again Down Here', cursive;
+}
+
+body.dark-theme p {
+    font-family: 'Bentham', serif;
+}
+
+.rotating {
+  animation: rotate 1s linear;
+}

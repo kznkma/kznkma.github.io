@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="ratings.css">
+    <link id="coquette-fonts" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link id="dark-theme-fonts" href="https://fonts.googleapis.com/css2?family=Bentham&family=Palanquin+Dark:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Contact - Ren's Portfolio</title>
+</head>
+<body class="coquette-mode">
+    <nav>
+        <div class="nav-container coquette-mode">
+            <div id="logo" class="logo coquette-mode" data-aos="zoom-in" data-aos-duration="1500">
+                <span>Ren</span>
+                <span>Reverie</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="services.html">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="ratings.html">Ratings</a></div>
+                <button id="theme-switcher">
+                    <img src="coquette.png" alt="Switch to Dark Theme">
+                </button>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Service</a>
+                <a href="">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1 id="rate-title" class="smooth-pop-up">Rate my services here!</h1>
+    </header>
+    <section>
+        <div id="error-container"></div>
+        <form id="rating-form" class="rating-form fade-in">
+            <label for="name" id="name-label">NAME:</label>
+            <input type="text" id="name" name="name">
+            <div id="name-error" class="error-message"></div>
+            <br>
+            <label for="message">MESSAGE:</label>
+            <textarea id="message" name="message" placeholder="Write a message..."></textarea>
+            <div id="message-error" class="error-message"></div>
+            <br>
+            <label>RATING:</label>
+            <div id="star-rating">
+                <img src="white star.png" class="star" data-value="1">
+                <img src="white star.png" class="star" data-value="2">
+                <img src="white star.png" class="star" data-value="3">
+                <img src="white star.png" class="star" data-value="4">
+                <img src="white star.png" class="star" data-value="5">
+            </div>
+            <div id="rating-error" class="error-message"></div>
+            <div id="anonymous-section">
+                <label for="anonymous-switch">POST ANONYMOUSLY:</label>
+                <input type="checkbox" id="anonymous-switch">
+            </div>
+            <br>
+            <button type="submit">SUBMIT</button>
+        </form>
+        <h2 class="slide-in">COMMENTS</h2>
+        <div id="comments-section">
+            <div id="comments-wrapper">
+                <button id="scroll-left" class="arrow arrow-left">&#9664;</button>
+                <div id="comments-container"></div>
+                <button id="scroll-right" class="arrow arrow-right">&#9654;</button>
+            </div>
+        </div>
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close">&times;</span>
+            <div id="lightbox-comment"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+          AOS.init({offset:0,});
+    </script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="ratings.js"></script>
+    </body>
+</html>

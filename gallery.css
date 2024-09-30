@@ -1,0 +1,623 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Reset and base styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+  }
+
+nav {
+    width: 100%;
+}
+
+.nav-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+  .nav-container .links {
+    display: flex;
+  }
+  
+  .nav-container .links a {
+    font-size: 1.2rem;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+  
+  .nav-container .links a:hover {
+    background-color: transparent;
+    color: rgb(211, 3, 3);
+    border-bottom: 2px solid rgb(211, 3, 3);
+  }
+
+  .logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: rgb(211, 3, 3);
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+.hamburg,
+.cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+.nav-container .links a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: rgb(211, 3, 3);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Gallery section */
+.gallery-section {
+    padding: 20px;
+}
+
+.gallery-header {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.favorite-artworks {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 18px;
+    color: rgb(170, 44, 65);
+    font-weight: bold;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-artworks-row .image-container {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 60px;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-artworks-row .image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #000; /* Change the color and width as needed */
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 1s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.15);
+    border-color: rgb(211, 3, 3);
+    box-shadow: 0 4px 8px rgba(211, 79, 79, 0.833);
+}
+
+.style-section {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.style-header {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    animation: slideFadeIn 1s ease-in-out; /* Apply animation */
+}
+
+.style-images {
+    display: flex;
+    overflow-x: scroll;
+    gap: 5px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    justify-content: center; /* Center the image containers */
+}
+
+.style-images .image-container {
+    flex: 0 0 auto;
+}
+
+.style-description {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    z-index: 10; /* Ensure arrows are on top */
+}
+
+.arrow-left {
+    left: 100px;
+}
+
+.arrow-right {
+    right: 100px;
+}
+
+/* Hide scrollbar */
+.style-images::-webkit-scrollbar {
+    display: none;
+}
+
+.style-images {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.centered-paragraph {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Coquette Theme */
+
+body.coquette-mode {
+    background-image: url('flower aura.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    transition: background-image 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+}
+
+body.coquette-mode::before {
+    background-image: url('flower aura.jpg');
+    opacity: 1;
+}
+
+.coquette-mode .logo span {
+    font-family: 'Pacifico', cursive;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+    margin-left: 30px;
+}
+
+.coquette-mode .logo span:nth-child(2) {
+    font-family: 'Pacifico', cursive;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+    margin-left: 10px; /* Adjust this value to move "Ren" to the left */
+}
+
+body.coquette-mode .nav-container {
+    background-color: transparent;
+    color: #333;
+}
+
+body.coquette-mode .nav-container {
+    background-color: transparent;
+    color: #333;
+}
+
+body.coquette-mode h1, h2 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+
+body.coquette-mode h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+body.coquette-mode h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+body.coquette-mode h1#gallery-header {
+    font-family: 'Pacifico', cursive;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+}
+
+body.coquette-mode .centered-paragraph {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 18px;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+    font-weight: bold;
+}
+
+body.coquette-mode .style-header {
+    font-family: 'Pacifico', cursive;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+}
+
+body.coquette-mode .favorite-artworks {
+    font-family: 'Pacifico', cursive;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+}
+
+body.coquette-mode .style-description {
+    margin-top: 3px;
+    font-weight: bold;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 22px;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+    text-align: center;
+}
+
+.logo.coquette-mode {
+    color: #333;
+    transition: color 0.5s ease-in-out; /* Smooth transition */
+}
+
+.nav-container.coquette-mode .links a {
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(231, 68, 95);
+    text-shadow: 0 0 15px rgb(242, 45, 78);
+    transition: color 0.5s ease-in-out;
+}
+
+.nav-container.coquette-mode .links a:hover {
+    color: #782222;
+    border-bottom: 2px solid rgb(114, 39, 39);
+}
+
+
+/* Dark Mode Theme */
+
+body.dark-mode {
+    background-image: url('red aura.jpg'); /* Change to a dark background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f0f0f0; /* Light text color for dark background */
+    transition: background-image 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+}
+
+body.dark-mode::before {
+    background-image: url('red aura.jpg'); /* Change to a dark background image */
+    opacity: 1;
+}
+
+.dark-mode .logo span {
+    font-family: 'Palanquin Dark', cursive;
+    color: #ff0000;
+    transition: color 0.5s ease-in-out;
+    margin-left: 20px;
+}
+
+.dark-mode .logo span:nth-child(2) {
+    font-family: 'Palanquin Dark', cursive;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    margin-left: 10px; /* Adjust this value to move "Ren" to the left */
+}
+
+body.dark-mode .nav-container {
+    font-family: 'Palanquin Dark', cursive;
+    color: #ff0000;
+}
+
+body.dark-mode h1, h2 {
+    text-align: center;
+    font-family: 'Palanquin Dark', cursive;
+    color: #f0f0f0;
+}
+
+body.dark-mode h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+body.dark-mode h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+body.dark-mode h1#gallery-header {
+    font-family: 'Palanquin Dark', sans-serif; /* Change to desired font family */
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3); /* Text shadow */
+}
+
+body.dark-mode .centered-paragraph {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    font-family: 'Bentham', serif;
+    font-size: 18px;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    font-weight: bold;
+}
+
+body.dark-mode .style-header {
+    font-family: 'Palanquin Dark', sans-serif;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    text-transform: uppercase;
+}
+
+body.dark-mode .favorite-artworks {
+    font-family: 'Palanquin Dark', sans-serif;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+body.dark-mode .style-description {
+    margin-top: 10px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 20px;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    text-align: center;
+}
+
+
+.logo.dark-mode {
+    color: #f0f0f0; /* Light color for logo */
+    transition: color 0.5s ease-in-out; /* Smooth transition */
+}
+
+.dark-mode .nav-container .links a {
+    font-family: 'Palanquin Dark', cursive;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    transition: color 0.5s ease-in-out; /* Smooth transition */
+  }
+  
+  .dark-mode .nav-container .links a:hover {
+    color: rgb(172, 15, 15);
+    border-bottom: 2px solid rgb(185, 31, 31);
+  }
+
+
+/* Theme Switcher Button */
+#theme-switcher {
+    background: none;
+    top: 20px;
+    left: 20px;
+    transform: translate(-15px, 3px);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: 20px;
+    transition: 0.3s linear;
+    animation: fadeUp 0.5s ease-in-out;
+  }
+  
+  
+  #theme-switcher img {
+    width: 60px;
+    height: 60px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  #theme-switcher.rotating-coquette img {
+    animation: rotate-coquette 1s forwards;
+  }
+  
+  #theme-switcher.rotating-dark img {
+    animation: rotate-dark 1s forwards;
+  }
+  
+  #theme-switcher:hover {
+    transform: translate(-6px, -5px); /* Move the button up slightly */
+}
+
+#theme-switcher.rotating img {
+    animation: rotate 0.5s ease-in-out; /* Apply the rotation animation */
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lightbox.show {
+    display: block;
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+}
+
+.lightbox.show .lightbox-content {
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 3;
+    }
+}
+
+@keyframes rotate-coquette {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes rotate-dark {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide from left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Slide from bottom */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
