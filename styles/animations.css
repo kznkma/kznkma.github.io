@@ -50,40 +50,20 @@
   }
 }
 
-@keyframes fadeOutBlack {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  }
-}
-
-.fade-out {
-  animation: fadeOutBlack 0.5s forwards;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-}
-
 .restart-animation {
-  animation: restartFadeOut 0.1s ease-out forwards; /* Reduced duration to 0.3s */
+  animation: restartFadeOut 0.1s ease-out forwards;
 }
 
 .pinch-expand {
-  animation: pinchExpand 0.5s ease-out forwards; /* Ensure forwards to keep final state */
+  animation: pinchExpand 0.5s ease-out forwards;
 }
 
 .pinch-collapse {
-  animation: pinchCollapse 0.5s ease-out forwards; /* Ensure forwards to keep final state */
+  animation: pinchCollapse 0.5s ease-out forwards;
 }
 
 .taskbar-item.fade-in {
-  animation: slideInLeft 0.3s ease-out; /* Reduced duration for faster animation */
+  animation: slideInLeft 0.3s ease-out;
 }
 
 .taskbar-item.fade-out {
@@ -159,11 +139,11 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .gallery-content {
-    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 
   .gallery-item {
-    grid-row: span 1 !important; /* Ensure items span only one row */
+    grid-row: span 1 !important;
   }
 }
