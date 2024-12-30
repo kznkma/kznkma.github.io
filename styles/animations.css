@@ -1,0 +1,169 @@
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pinchExpand {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pinchCollapse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes restartFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutBlack {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  }
+}
+
+.fade-out {
+  animation: fadeOutBlack 0.5s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.restart-animation {
+  animation: restartFadeOut 0.1s ease-out forwards; /* Reduced duration to 0.3s */
+}
+
+.pinch-expand {
+  animation: pinchExpand 0.5s ease-out forwards; /* Ensure forwards to keep final state */
+}
+
+.pinch-collapse {
+  animation: pinchCollapse 0.5s ease-out forwards; /* Ensure forwards to keep final state */
+}
+
+.taskbar-item.fade-in {
+  animation: slideInLeft 0.3s ease-out; /* Reduced duration for faster animation */
+}
+
+.taskbar-item.fade-out {
+  animation: fadeOut 0.3s ease-out;
+  opacity: 0;
+}
+
+.sleep-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.cat-animation {
+  width: 150px;
+  height: 150px;
+  background: url('../assets/cat.png') no-repeat center;
+  background-size: contain;
+  animation: bounce 1s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.contacts-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: var(--window-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  animation: slideIn 0.3s ease-out;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.social-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+  background-color: var(--primary-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-content {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 10px;
+  }
+
+  .gallery-item {
+    grid-row: span 1 !important; /* Ensure items span only one row */
+  }
+}

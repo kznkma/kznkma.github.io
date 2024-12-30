@@ -1,0 +1,137 @@
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  grid-auto-rows: 180px;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item:nth-child(2n) {
+  grid-row: span 2;
+}
+
+.gallery-item:nth-child(3n) {
+  grid-row: span 1;
+}
+
+.gallery-window {
+  width: 70vw;
+  height: 70vh;
+}
+
+.lightbox {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox.show {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-content {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust column size for smaller screens */
+    gap: 10px;
+  }
+
+  .gallery-item {
+    grid-row: span 1 !important; /* Ensure items span only one row */
+  }
+
+  .subfolder-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 10px;
+  }
+
+  .subfolder-container .folder {
+    width: 100%;
+    height: auto;
+  }
+
+  .subfolder-container .folder img {
+    width: 100%;
+    height: auto;
+    max-width: 100px; /* Add this line to limit the maximum width */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-content {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 5px;
+  }
+
+  .subfolder-container {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 5px;
+  }
+
+  .subfolder-container .folder {
+    width: 100%;
+    height: auto;
+  }
+
+  .subfolder-container .folder img {
+    width: 100%;
+    height: auto;
+    max-width: 80px; /* Add this line to limit the maximum width */
+  }
+}

@@ -1,0 +1,149 @@
+.start-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--window-bg);
+  padding: 5px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Add this line to allow wrapping */
+}
+
+.start-btn {
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.start-btn img {
+  width: 60px;
+  height: 60px;
+  position: sticky;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 10px;
+  background: var(--window-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 10px 0;
+}
+
+.menu-content.active {
+  display: block;
+}
+
+.menu-item {
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+  background-color: var(--primary-red);
+}
+
+.clock {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-left: auto;
+}
+
+.sleep-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sleep-message {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInOut 5s infinite;
+}
+
+/* TASKBAR ITEMS */
+.taskbar-items {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+}
+
+.taskbar-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background: var(--secondary-red);
+  color: var(--window-bg);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.taskbar-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.taskbar-item:hover {
+  transform: scale(1.1);
+}
+
+.taskbar-item.fade-in {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.taskbar-item.fade-out {
+  animation: fadeOut 0.5s ease-out;
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .start-menu {
+    flex-direction: column;
+    align-items: center; /* Center align items */
+  }
+
+  .start-btn {
+    align-self: center; /* Center align the button */
+    margin-bottom: 10px; /* Add some space below the button */
+  }
+
+  .menu-content {
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+  }
+
+  .taskbar-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Ensure taskbar items take full width */
+    margin-bottom: 10px; /* Add some space below the taskbar items */
+  }
+
+  .taskbar-item {
+    margin: 5px;
+  }
+
+  .clock {
+    align-self: center; /* Center align the clock */
+    margin-top: 10px;
+  }
+}

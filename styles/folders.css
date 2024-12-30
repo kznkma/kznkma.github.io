@@ -1,0 +1,238 @@
+.desktop {
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  display: flex ;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.folder-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 100%;
+}
+
+.folder, .file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.folder:hover, .file:hover {
+  background-color: var(--secondary-red-light);
+  transform: scale(1.05);
+}
+
+.folder img, .file img {
+  width: 80px;
+  height: 80px;
+}
+
+.folder span, .file span {
+  font-size: 14px;
+  text-align: center;
+}
+
+.subfolder-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.subfolder-container .folder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.subfolder-container .folder:hover {
+  background-color: var(--secondary-red-light);
+  transform: scale(1.05);
+}
+
+.subfolder-container .folder img {
+  width: 100px;
+  height: 100px;
+}
+
+.subfolder-container .folder span {
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Services Folder Styles */
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.status-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 10px;
+  background: var(--secondary-red);
+  border-radius: 8px;
+  color: var(--window-bg);
+}
+
+.service-item {
+  padding: 15px;
+  background: var(--primary-red);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.notepad-content {
+  padding: 10px;
+  background: var(--window-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+}
+
+.notepad-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.notepad-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.notepad-content li {
+  margin-bottom: 10px;
+}
+
+.notepad-content a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.notepad-content a:hover {
+  color: var(--primary-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .folder-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .folder img, .file img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .folder span, .file span {
+    font-size: 12px;
+  }
+
+  .services-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-content {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .gallery-item {
+    grid-row: span 1 !important;
+  }
+
+  .window {
+    width: 75vw;
+    height: 80vh;
+    top: 10%;
+    left: 5%;
+    transform: none;
+  }
+
+  .window-header {
+    padding: 5px;
+  }
+
+  .window-title {
+    font-size: 14px;
+  }
+
+  .window-content {
+    padding: 10px;
+  }
+
+  .service-item, .notepad-content, .condition-item {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .folder-container {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 5px;
+  }
+
+  .folder img, .file img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .folder span, .file span {
+    font-size: 10px;
+  }
+
+  .services-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-content {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+  .gallery-item {
+    grid-row: span 1 !important;
+  }
+
+  .window {
+    width: 90vw;
+    height: 80vh;
+    top: 10%;
+    left: 5%;
+    transform: none;
+  }
+
+  .window-header {
+    padding: 5px;
+  }
+
+  .window-title {
+    font-size: 12px;
+  }
+
+  .window-content {
+    padding: 5px;
+  }
+
+  .service-item, .notepad-content, .condition-item {
+    font-size: 10px;
+  }
+}
