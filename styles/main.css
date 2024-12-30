@@ -24,7 +24,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-size: 1rem; /* Base font size */
+  font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,7 +68,7 @@ h2, .service-item {
   width: 600px;
   height: 400px;
   overflow: hidden;
-  cursor: move; /* Ensure cursor indicates draggable */
+  cursor: move;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -81,9 +81,9 @@ h2, .service-item {
 
 .contacts-window {
   width: 30vw;
-  height: auto; /* Adjust height based on content */
-  max-height: 60vh; /* Set a maximum height */
-  overflow-y: auto; /* Add scroll if content exceeds max-height */
+  height: auto;
+  max-height: 60vh; 
+  overflow-y: auto;
 }
 
 .window.active {
@@ -105,18 +105,20 @@ h2, .service-item {
 }
 
 .close-btn {
-  background: none;
+  background: url('../assets/close.png') no-repeat center center;
+  background-size: contain;
   border: none;
-  color: var(--window-bg);
-  font-size: 20px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  padding: 0 5px;
+  padding: 0;
+  margin: 0;
 }
 
 .window-content {
-  max-height: calc(100% - 40px); /* Adjust based on header height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  touch-action: pan-y; /* Allow vertical scrolling */
+  max-height: calc(100% - 40px);
+  overflow-y: auto;
+  touch-action: pan-y;
 }
 
 .user-avatar {
@@ -137,10 +139,41 @@ h2, .service-item {
   justify-content: center;
 }
 
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-links li {
+  display: flex;
+  align-items: center;
+}
+
+.social-links img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.social-links a:hover {
+  color: var(--primary-red);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   body {
-    font-size: 0.875rem; /* Adjust font size for smaller screens */
+    font-size: 0.875rem; 
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -154,50 +187,61 @@ h2, .service-item {
   }
 
   .window {
-    width: 80vw; /* Adjusted to be smaller */
-    height: 60vh; /* Adjusted to be smaller */
+    width: 80vw;
+    height: 60vh; 
     top: 10%;
     left: 10%;
     transform: none;
-    overflow: hidden; /* Ensure the window itself does not scroll */
+    overflow: hidden;
   }
 
   .window-content {
-    max-height: calc(100% - 40px); /* Adjust based on header height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    touch-action: pan-y; /* Allow vertical scrolling */
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
+    touch-action: pan-y;
   }
 
-  .gallery-window {
-    width: 80vw; /* Adjusted to be smaller */
-    height: 60vh; /* Adjusted to be smaller */
-  }
-
-  .contacts-window {
-    width: 80vw; /* Adjusted to be smaller */
-    height: auto; /* Adjust height based on content */
-    max-height: 60vh; /* Set a maximum height */
+  .close-btn {
+    width: 18px;
+    height: 18px;
   }
 }
 
-@media (max-width: 480px) {
-  .window {
-    width: 90vw; /* Adjusted to be smaller */
-    height: 50vh; /* Adjusted to be smaller */
-    top: 10%;
-    left: 5%;
-    transform: none;
-    overflow: hidden; /* Ensure the window itself does not scroll */
-  }
-
   .gallery-window {
-    width: 90vw; /* Adjusted to be smaller */
-    height: 50vh; /* Adjusted to be smaller */
+    width: 80vw;
+    height: 60vh;
   }
 
   .contacts-window {
-    width: 90vw; /* Adjusted to be smaller */
-    height: auto; /* Adjust height based on content */
-    max-height: 50vh; /* Set a maximum height */
+    width: 26vw;
+    height: auto; 
+    max-height: 70vh; 
+  }
+
+
+@media (max-width: 480px) {
+  .window {
+    width: 90vw;
+    height: 50vh;
+    top: 10%;
+    left: 5%;
+    transform: none;
+    overflow: hidden;
+  }
+
+  .close-btn {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gallery-window {
+    width: 90vw;
+    height: 50vh;
+  }
+
+  .contacts-window {
+    width: 90vw;
+    height: auto;
+    max-height: 50vh;
   }
 }
