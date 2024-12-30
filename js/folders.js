@@ -231,11 +231,12 @@ gallery2: `
   contact: `
     <div class="notepad-content">
       <h2 class="contact-title">Contact Information</h2>
-      <ul>
-        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-        <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
-        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
-        <li><a href="https://www.ko-fi.com" target="_blank">Ko-Fi</a></li>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com/profile.php?id=61561673905668" target="_blank"><img src="assets/icons/fb.png" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://x.com/kznkma" target="_blank"><img src="assets/icons/twt.png" alt="Twitter"> Twitter</a></li>
+        <li><a href="https://www.tiktok.com/@kznkma" target="_blank"><img src="assets/icons/tiktok.png" alt="TikTok"> TikTok</a></li>
+        <li><a href="https://ko-fi.com/kznkma" target="_blank"><img src="assets/icons/kofi.png" alt="Ko-Fi"> Ko-Fi</a></li>
+        <li><a href="https://github.com/kznkma" target="_blank"><img src="assets/icons/github.png" alt="Github"> Github</a></li>
       </ul>
     </div>
   `,
@@ -282,12 +283,12 @@ function initializeFolders() {
       folderWindow.classList.add('contacts-window');
     }
     folderWindow.innerHTML = `
-      <div class="window-header">
-        <span class="window-title">${folder.querySelector('span').textContent}</span>
-        <button class="close-btn">×</button>
-      </div>
-      <div class="window-content">${folderContents[folderType]}</div>
-    `;
+    <div class="window-header">
+      <span class="window-title">${folder.querySelector('span').textContent}</span>
+      <button class="close-btn"></button>
+    </div>
+    <div class="window-content">${folderContents[folderType]}</div>
+  `;
     desktop.appendChild(folderWindow);
 
     // Center the window for the opening animation
