@@ -29,10 +29,10 @@ export function initializeStartMenu() {
           window.location.href = 'login.html';
           break;
           case 'restart':
-            document.body.classList.add('restart-animation');
+           // document.body.classList.add('restart-animation');
             setTimeout(() => {
-              window.location.reload(); // Reload the page to refresh all elements
-            }, 100); // Match the duration of the animation
+              window.location.reload();
+            }, 100);
             break;
         }
       });
