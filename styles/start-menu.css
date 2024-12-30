@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Add this line to allow wrapping */
+  flex-wrap: wrap;
 }
 
 .start-btn {
@@ -118,24 +118,24 @@
 @media (max-width: 768px) {
   .start-menu {
     flex-direction: column;
-    align-items: center; /* Center align items */
+    align-items: center;
   }
 
   .start-btn {
-    align-self: center; /* Center align the button */
-    margin-bottom: 10px; /* Add some space below the button */
+    align-self: center; 
+    margin-bottom: 10px; 
   }
 
   .menu-content {
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .taskbar-items {
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%; /* Ensure taskbar items take full width */
-    margin-bottom: 10px; /* Add some space below the taskbar items */
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .taskbar-item {
@@ -143,7 +143,7 @@
   }
 
   .clock {
-    align-self: center; /* Center align the clock */
+    align-self: center;
     margin-top: 10px;
   }
 }
