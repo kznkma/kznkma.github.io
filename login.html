@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Portfolio - Login</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-screen">
+        <div class="login-box">
+            <img src="assets/angel.jpg" alt="User" class="user-avatar">
+            <h2 class="welcome-title">Welcome User!</h2>
+            <button id="loginBtn" class="login-btn">Click to proceed</button>
+        </div>
+    </div>
+    
+    <div id="fadeOverlay" class="fade-out" style="display: none;"></div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            const fadeOverlay = document.getElementById('fadeOverlay');
+            fadeOverlay.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500); // Match the duration of the fade-out animation
+        });
+    </script>
+</body>
+</html>
