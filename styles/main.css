@@ -1,0 +1,203 @@
+:root {
+  --primary-red: #282D4A;
+  --secondary-red: #3E3E62;
+  --secondary-red-light: #ece3e5;
+  --background: url('../assets/bg.png');
+  --accent-red: #48496F;
+  --text-color: #ac7cb7;
+  --window-bg: #f9ebef;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gloria Hallelujah', cursive;
+  background: var(--background) no-repeat center center fixed;
+  color: var(--text-color);
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem; /* Base font size */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+h2, .service-item {
+  color: #f9ebef;
+}
+
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.payment-methods-title {
+  color: var(--text-color);
+}
+
+.contact-title {
+  color: var(--text-color);
+}
+
+.desktop {
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--window-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  cursor: move; /* Ensure cursor indicates draggable */
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.gallery-window {
+  width: 800px;
+  height: 600px;
+}
+
+.contacts-window {
+  width: 30vw;
+  height: auto; /* Adjust height based on content */
+  max-height: 60vh; /* Set a maximum height */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
+}
+
+.window.active {
+  display: block;
+}
+
+.window-header {
+  background: var(--secondary-red);
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.window-title {
+  font-weight: 700;
+  color: var(--window-bg);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--window-bg);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.window-content {
+  max-height: calc(100% - 40px); /* Adjust based on header height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  touch-action: pan-y; /* Allow vertical scrolling */
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2em;
+  }
+
+  .desktop {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .window {
+    width: 80vw; /* Adjusted to be smaller */
+    height: 60vh; /* Adjusted to be smaller */
+    top: 10%;
+    left: 10%;
+    transform: none;
+    overflow: hidden; /* Ensure the window itself does not scroll */
+  }
+
+  .window-content {
+    max-height: calc(100% - 40px); /* Adjust based on header height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    touch-action: pan-y; /* Allow vertical scrolling */
+  }
+
+  .gallery-window {
+    width: 80vw; /* Adjusted to be smaller */
+    height: 60vh; /* Adjusted to be smaller */
+  }
+
+  .contacts-window {
+    width: 80vw; /* Adjusted to be smaller */
+    height: auto; /* Adjust height based on content */
+    max-height: 60vh; /* Set a maximum height */
+  }
+}
+
+@media (max-width: 480px) {
+  .window {
+    width: 90vw; /* Adjusted to be smaller */
+    height: 50vh; /* Adjusted to be smaller */
+    top: 10%;
+    left: 5%;
+    transform: none;
+    overflow: hidden; /* Ensure the window itself does not scroll */
+  }
+
+  .gallery-window {
+    width: 90vw; /* Adjusted to be smaller */
+    height: 50vh; /* Adjusted to be smaller */
+  }
+
+  .contacts-window {
+    width: 90vw; /* Adjusted to be smaller */
+    height: auto; /* Adjust height based on content */
+    max-height: 50vh; /* Set a maximum height */
+  }
+}
