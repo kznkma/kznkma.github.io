@@ -291,20 +291,18 @@ function initializeFolders() {
   `;
     desktop.appendChild(folderWindow);
 
-    // Center the window for the opening animation
     const centerX = (window.innerWidth - folderWindow.offsetWidth) / 2;
     const centerY = (window.innerHeight - folderWindow.offsetHeight) / 2;
     folderWindow.style.left = `${centerX}px`;
     folderWindow.style.top = `${centerY}px`;
 
-    const hasBeenDragged = makeDraggable(folderWindow); // Get the flag function
+    const hasBeenDragged = makeDraggable(folderWindow); 
 
     const closeBtn = folderWindow.querySelector('.close-btn');
     closeBtn.addEventListener('click', () => {
       closeFolderWindow(folderWindow, folderType, hasBeenDragged);
     });
 
-    // Add touch event listener for mobile devices
     closeBtn.addEventListener('touchstart', (e) => {
       e.preventDefault(); 
       closeFolderWindow(folderWindow, folderType, hasBeenDragged);
@@ -312,7 +310,6 @@ function initializeFolders() {
 
     addTaskbarItem(folderType, folder.querySelector('span').textContent, folder.querySelector('img').src);
 
-    // Add lightbox functionality for gallery images
     if (folderType.startsWith('gallery')) {
       const galleryItems = folderWindow.querySelectorAll('.gallery-item img');
       galleryItems.forEach(item => {
