@@ -5,38 +5,78 @@ export function initializeStartMenu() {
   const sleepScreen = document.querySelector('.sleep-screen');
   const taskbarItems = document.querySelector('.taskbar-items');
 
-  startBtn.addEventListener('click', () => {
+  function toggleMenu() {
     menuContent.classList.toggle('active');
-  });
+  }
 
-  menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const action = item.dataset.action;
-      menuContent.classList.remove('active');
+  function handleMenuItemClick(event) {
+    const action = event.target.dataset.action;
+    menuContent.classList.remove('active');
 
-      switch (action) {
-        case 'sleep':
-          sleepScreen.classList.remove('hidden');
-          const handleWakeClick = () => {
-            sleepScreen.removeEventListener('click', handleWakeClick);
+    switch (action) {
+      case 'sleep':
+        sleepScreen.classList.remove('hidden');
+        const handleWakeClick = () => {
+          sleepScreen.removeEventListener('click', handleWakeClick);
+          setTimeout(() => {
+            sleepScreen.classList.add('hidden');
+          }, 100);
+        };
+        sleepScreen.addEventListener('click', handleWakeClick);
+        break;
+      case 'shutdown':
+        window.location.href = 'index.html';
+        break;
+      case 'restart':
+        const elements = document.querySelectorAll('body *:not(.start-menu-icon)');
+        const windows = document.querySelectorAll('.window');
+        const taskbarItems = document.querySelectorAll('.taskbar-item');
+
+        windows.forEach(window => {
+          window.classList.add('pinch-collapse');
+          setTimeout(() => {
+            window.remove();
+          }, 500); 
+        });
+
+        taskbarItems.forEach(item => {
+          item.classList.add('fade-out');
+          setTimeout(() => {
+            item.remove();
+          }, 500); 
+        });
+
+        elements.forEach(element => {
+          element.style.animation = 'fadeOut 0.5s forwards';
+        });
+
+        setTimeout(() => {
+          elements.forEach(element => {
+            element.style.animation = 'fadeIn 0.5s forwards';
             setTimeout(() => {
-              sleepScreen.classList.add('hidden');
-            }, 100);
-          };
-          sleepScreen.addEventListener('click', handleWakeClick);
-          break;
-        case 'shutdown':
-          window.location.href = 'login.html';
-          break;
-          case 'restart':
-           // document.body.classList.add('restart-animation');
-            setTimeout(() => {
-              window.location.reload();
-            }, 100);
-            break;
-        }
-      });
+              element.style.animation = '';
+            }, 500); 
+          });
+          reinitializeStartMenu();
+        }, 500);
+        break;
+    }
+  }
+
+  function reinitializeStartMenu() {
+    startBtn.removeEventListener('click', toggleMenu);
+    startBtn.addEventListener('click', toggleMenu);
+
+    menuItems.forEach(item => {
+      item.removeEventListener('click', handleMenuItemClick);
+      item.addEventListener('click', handleMenuItemClick);
     });
+  }
+
+  startBtn.addEventListener('click', toggleMenu);
+  menuItems.forEach(item => {
+    item.addEventListener('click', handleMenuItemClick);
+  });
 
   initializeClock();
 }
