@@ -105,7 +105,7 @@ h2, .service-item {
 }
 
 .close-btn {
-  background: url('../assets/close.png') no-repeat center center;
+  background: url('assets/close.png') no-repeat center center;
   background-size: contain;
   border: none;
   width: 20px;
