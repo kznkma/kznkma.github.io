@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ren's Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/folders.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="styles/start-menu.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="desktop">
+        <div class="folder-container">
+            <div class="folder" data-folder="services">
+                <img src="assets/folder1.png" alt="Services">
+                <span>SERVICES</span>
+            </div>
+            <div class="folder" data-folder="gallery">
+                <img src="assets/gallery.png" alt="Gallery">
+                <span>GALLERY</span>
+            </div>
+            <div class="folder" data-folder="conditions">
+                <img src="assets/folder3.png" alt="Conditions">
+                <span>CONDITIONS</span>
+            </div>
+            <div class="folder" data-folder="payment">
+                <img src="assets/folder4.png" alt="Payment">
+                <span>PAYMENT</span>
+            </div>
+            <div class="folder" data-folder="ratings">
+                <img src="assets/folder5.png" alt="Ratings">
+                <span>RATINGS</span>
+            </div>
+            <div class="folder" data-folder="contact">
+                <img src="assets/txt2.png" alt="Contact">
+                <span>contact.txt</span>
+            </div>
+        </div>
+
+        <div class="start-menu">
+            <div class="start-btn">
+                <img src="assets/menu.png" alt="Menu">
+            </div>
+            <div class="taskbar-items"></div>
+            <div class="menu-content">
+                <div class="menu-item" data-action="sleep">Sleep</div>
+                <div class="menu-item" data-action="shutdown">Shutdown</div>
+                <div class="menu-item" data-action="restart">Restart</div>
+            </div>
+            <div class="clock"></div>
+        </div>
+
+        <div class="sleep-screen hidden">
+            <div class="sleep-message">Click anywhere to return</div>
+            <div class="cat-animation"></div>
+        </div>
+
+
+<!-- Lightbox Effect -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
